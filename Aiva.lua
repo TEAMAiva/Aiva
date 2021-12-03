@@ -11,17 +11,16 @@ bot_id  = token:match("(%d+)")
 SUDO = SUDO
 sudo_users = {SUDO,2044104713,2044104713}   
 print([[
-_        _    ______     _____ _   _ 
+_   
 | |      / \  |  _ \ \   / /_ _| \ | |
-| |     / _ \ | |_) \ \ / / | ||  \| |
-| |___ / ___ \|  _ < \ V /  | || |\  |
+| |    
 |_____/_/   \_\_| \_\ \_/  |___|_| \_|
 > CH › @huer44
 ~> DEVELOPER › @TTITITl
 ]])
 io.popen("mkdir File_Bot") 
 io.popen("cd File_Bot && rm -rf commands.lua") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/LARVINNTEAM/Files_Larvin/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/TEAMAiva/Files_Larvin/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -40,12 +39,12 @@ function SudoBot(msg)
 local LARVIN = false  
 for k,v in pairs(sudo_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-LARVIN = true  
+Aiva = true  
 end  
 end  
-return LARVIN  
+return Aiva  
 end 
-function LARVINSudoBot(sudo)  
+function AivaSudoBot(sudo)  
 local TEND = false  
 for k,v in pairs(sudo_users) do  
 if tonumber(sudo) == tonumber(v) then  
@@ -54,7 +53,7 @@ end
 end  
 return TEND  
 end 
-function DevLARVINW(msg) 
+function DevAivaW(msg) 
 local hash = database:sismember(bot_id.."DEV:Sudo:T", msg.sender_user_id_) 
 if hash or SudoBot(msg) then  
 return true  
@@ -71,7 +70,7 @@ return idbot
 end
 function Sudo(msg) 
 local hash = database:sismember(bot_id..'Sudo:User', msg.sender_user_id_) 
-if hash or SudoBot(msg) or DevLARVINW(msg) or Bot(msg)  then  
+if hash or SudoBot(msg) or DevAivaW(msg) or Bot(msg)  then  
 return true  
 else  
 return false  
@@ -79,7 +78,7 @@ end
 end
 function SudoBotCoSu(msg)
 local hash = database:sismember(bot_id..'CoSu'..msg.chat_id_, msg.sender_user_id_) 
-if hash or SudoBot(msg) or DevLARVINW(msg) or Sudo(msg) or Bot(msg)  then   
+if hash or SudoBot(msg) or DevAivaW(msg) or Sudo(msg) or Bot(msg)  then   
 return true 
 else 
 return false 
@@ -87,7 +86,7 @@ end
 end
 function BasicConstructor(msg)
 local hash = database:sismember(bot_id..'Basic:Constructor'..msg.chat_id_, msg.sender_user_id_) 
-if hash or SudoBot(msg) or DevLARVINW(msg) or Sudo(msg) or SudoBotCoSu(msg) or Bot(msg)  then   
+if hash or SudoBot(msg) or DevAivaW(msg) or Sudo(msg) or SudoBotCoSu(msg) or Bot(msg)  then   
 return true 
 else 
 return false 
@@ -95,7 +94,7 @@ end
 end
 function Constructor(msg)
 local hash = database:sismember(bot_id..'Constructor'..msg.chat_id_, msg.sender_user_id_) 
-if hash or SudoBot(msg) or DevLARVINW(msg) or Sudo(msg) or BasicConstructor(msg) or SudoBotCoSu(msg) or Bot(msg)  then       
+if hash or SudoBot(msg) or DevAivaW(msg) or Sudo(msg) or BasicConstructor(msg) or SudoBotCoSu(msg) or Bot(msg)  then       
 return true    
 else    
 return false    
@@ -399,31 +398,31 @@ end
 function Total_Msg(msgs)  
 local LARVIN_Msg = ''  
 if msgs < 100 then 
-LARVIN_Msg = 'غير متفاعل' 
+Aiva_Msg = 'غير متفاعل' 
 elseif msgs < 200 then 
-LARVIN_Msg = 'بده يتحسن' 
+Aiva_Msg = 'بده يتحسن' 
 elseif msgs < 400 then 
-LARVIN_Msg = 'شبه متفاعل' 
+Aiva_Msg = 'شبه متفاعل' 
 elseif msgs < 700 then 
-LARVIN_Msg = 'متفاعل' 
+Aiva_Msg = 'متفاعل' 
 elseif msgs < 1200 then 
-LARVIN_Msg = 'متفاعل قوي' 
+Aiva_Msg = 'متفاعل قوي' 
 elseif msgs < 2000 then 
-LARVIN_Msg = 'متفاعل جدا' 
+Aiva_Msg = 'متفاعل جدا' 
 elseif msgs < 3500 then 
-LARVIN_Msg = 'اقوى تفاعل'  
+Aiva_Msg = 'اقوى تفاعل'  
 elseif msgs < 4000 then 
-LARVIN_Msg = 'متفاعل نار' 
+Aiva_Msg = 'متفاعل نار' 
 elseif msgs < 4500 then 
-LARVIN_Msg = 'قمة التفاعل'
+Aiva_Msg = 'قمة التفاعل'
 elseif msgs < 5500 then 
-LARVIN_Msg = 'اقوى متفاعل' 
+Aiva_Msg = 'اقوى متفاعل' 
 elseif msgs < 7000 then 
-LARVIN_Msg = 'ملك التفاعل' 
+Aiva_Msg = 'ملك التفاعل' 
 elseif msgs < 9500 then 
-LARVIN_Msg = 'امبروطور التفاعل' 
+Aiva_Msg = 'امبروطور التفاعل' 
 elseif msgs < 10000000000 then 
-LARVIN_Msg = 'رب التفاعل'  
+Aiva_Msg = 'رب التفاعل'  
 end 
 return LARVIN_Msg 
 end
@@ -479,7 +478,7 @@ function GetFile_Bot(msg)
 local list = database:smembers(bot_id..'Chek:Groups') 
 local t = '{"BOT_ID": '..bot_id..',"GP_BOT":{'  
 for k,v in pairs(list) do   
-NAME = 'LARVIN Chat'
+NAME = 'Aiva Chat'
 link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_) or ''
 CoSu = database:smembers(bot_id..'CoSu'..v)
 ASAS = database:smembers(bot_id..'Basic:Constructor'..v)
@@ -487,9 +486,9 @@ MNSH = database:smembers(bot_id..'Constructor'..v)
 MDER = database:smembers(bot_id..'Manager'..v)
 MOD = database:smembers(bot_id..'Mod:User'..v)
 if k == 1 then
-t = t..'"'..v..'":{"LARVIN":"'..NAME..'",'
+t = t..'"'..v..'":{"Aiva":"'..NAME..'",'
 else
-t = t..',"'..v..'":{"LARVIN":"'..NAME..'",'
+t = t..',"'..v..'":{"Aiva":"'..NAME..'",'
 end
 if #CoSu ~= 0 then 
 t = t..'"CoSu":['
@@ -585,7 +584,7 @@ end
 function Addmp3(msg,chat,kkl,ffrr)
 local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
-sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"@VvBvV")  
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"@huer88")  
 os.execute('rm -rf ./'..ffrr) 
 end
 function Addsticker(msg,chat,Sd,rre)
@@ -1055,16 +1054,16 @@ send(msg.chat_id_, msg.id_,' *⌔︙تم حفظ كليشه ستارت*')
 database:del(bot_id..'Start:Bots') 
 return false
 end
-if text == 'ضع كليشه ستارت ⌔' and DevLARVINW(msg) then 
+if text == 'ضع كليشه ستارت ⌔' and DevAivaW(msg) then 
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,' *⌔︙ارسل لي الكليشه الان*')
 return false
 end
-if text == 'حذف كليشه ستارت ⌔' and DevLARVINW(msg) then 
+if text == 'حذف كليشه ستارت ⌔' and DevAivaW(msg) then 
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,' *⌔︙تم حذف كليشه ستارت*')
 end
-if text == 'معلومات السيرفر ⌔' and DevLARVINW(msg) then 
+if text == 'معلومات السيرفر ⌔' and DevAivaW(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -1108,7 +1107,7 @@ if text =='تغيير المطور الاساسي ⌔' and not SudoBot(msg) then
 send(msg.chat_id_, msg.id_,'*⌔︙لا يمكنك تغيير المطور الاساسي*')
 end
 if text == 'تحديث السورس ⌔' and DevLARVINW(msg) then 
-os.execute('rm -rf LARVIN.lua')
+os.execute('rm -rf Aiva.lua')
 os.execute('wget https://raw.githubusercontent.com/LARVINNTEAM/LARVIN/main/LARVIN.lua')
 send(msg.chat_id_, msg.id_,' *⌔︙تم تحديث السورس* \n*⌔︙لديك اخر اصدار لسورس لارفين*\n*⌔︙الاصدار » { 2.8v}*')
 dofile('LARVIN.lua')  
@@ -2622,7 +2621,7 @@ Text = [[
 
 ⌔︙LARViN TEAM
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-⌔︙[Source Files](http://t.me/SourceLarvine)
+⌔︙[Source Files](http://t.me/huer88)
 
 ⌔︙[Source Channel](https://t.me/i600ik/15)
 
@@ -3763,8 +3762,8 @@ end
 end,nil)
 end
 
-if text == 'الملفات' and DevLARVINW(msg) then
-t = ' *⌔︙ملفات السورس لارفين ↓*\n*ٴ┉ ┉ ┉ ┉ ┉ 𝑳𝐍 ┉  ┉ ┉ ┉ ┉ٴ* \n'
+if text == 'الملفات' and DevAivaW(msg) then
+t = ' *⌔︙ملفات السورس ايفا ↓*\n*ٴ┉ ┉ ┉ ┉ ┉ 𝑳𝐍 ┉  ┉ ┉ ┉ ┉ٴ* \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -3776,7 +3775,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevLARVINW(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/LARVINNTEAM/Files_Larvin/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/AivaTEAM/Files_Aiva/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3814,13 +3813,13 @@ t = " *⌔︙الملف »* "..file.."\n*⌔︙تم تعطيل ملف* \n"
 else
 t = " *⌔︙بالتاكيد تم تعطيل ملف →* "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/LARVINNTEAM/Files_Larvin/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/AivaTEAM/Files_Aiva/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
-dofile('LARVIN.lua')  
+dofile('Aiva.lua')  
 else
-send(msg.chat_id_, msg.id_," *⌔︙عذرا الملف لايدعم سورس لارفين* \n") 
+send(msg.chat_id_, msg.id_," *⌔︙عذرا الملف لايدعم سورس ايفا* \n") 
 end
 return false
 end
@@ -3834,15 +3833,15 @@ t = " *⌔︙بالتاكيد تم تفعيل ملف →* "..file.." \n"
 else
 t = " *⌔︙الملف »* "..file.."\n*⌔︙تم تفعيل ملف* \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/LARVINNTEAM/Files_Larvin/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/AivaTEAM/Files_Aiva/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
-dofile('LARVIN.lua')  
+dofile('Aiva.lua')  
 else
-send(msg.chat_id_, msg.id_," *⌔︙عذرا الملف لايدعم سورس لارفين* \n") 
+send(msg.chat_id_, msg.id_," *⌔︙عذرا الملف لايدعم سورس ايفا* \n") 
 end
 return false
 end
